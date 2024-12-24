@@ -17,7 +17,7 @@ function AdminDataVisualization() {
   const [submissionData, setSubmissionData] = useState([]);
   const [submissionTypes, setSubmissionTypes] = useState([]);
   // const[mode,setMode]=useState("purpleTeam");
-  const mode="purpleTeam";
+  const mode="ctfd";
   
 
   useEffect(() => {
@@ -382,6 +382,10 @@ function AdminDataVisualization() {
           <div id="user-scores-chart" className="border border-gray-300 rounded-lg bg-white shadow-lg p-6">
             <ApexCharts options={userScoresOptions} series={userScoresSeries} type="bar" height={320} />
           </div>
+          {mode==='ctfd' &&(
+          <div className="border border-gray-300 rounded-lg bg-white shadow-lg p-6">
+            <ApexCharts options={userSubmissionsOptions} series={userSubmissionsSeries} type="bar" height={320} />
+          </div>)}
 
           {mode==='purpleTeam' &&(
           <div id="manual-scores-chart" className="border border-gray-300 rounded-lg bg-white shadow-lg p-6">
@@ -487,7 +491,7 @@ function AdminDataVisualization() {
   </div>
 )}
 
-
+{mode==='purpleTeam' && (
         <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mb-8 mt-8">
           <div className="border border-gray-300 rounded-lg bg-white shadow-lg p-6">
             <ApexCharts options={userSubmissionsOptions} series={userSubmissionsSeries} type="bar" height={320} />
@@ -495,7 +499,7 @@ function AdminDataVisualization() {
           {/* <div className="border border-gray-300 rounded-lg bg-white shadow-lg p-6">
             <ApexCharts options={userPointsOptions} series={userPointsSeries} type="bar" height={320} />
           </div> */}
-        </div>
+        </div>)}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 mt-8">
           <div className="border border-gray-300 rounded-lg bg-white shadow-lg p-6">

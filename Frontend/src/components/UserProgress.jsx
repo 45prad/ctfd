@@ -16,7 +16,7 @@ function UserProgress() {
     const context = useContext(AuthContext);
     const { user, fetchUserRole } = context;
     // const[mode,setMode]=useState("purpleTeam");
-    const mode="purpleTeam";
+    const mode="ctfd";
     const [submissionData, setSubmissionData]=useState(null);
     const [submissionTypes, setSubmissionTypes]=useState(null);
     const [hintCost,setHintCost]=useState(null);
